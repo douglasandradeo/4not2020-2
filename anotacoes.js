@@ -10,3 +10,5 @@
 // npm start inicia o site
 
 // npm install ou npm i
+
+// no padrão do Angular, Node, Express e MongoDB usa-se letra maiúscula e termo no singular
