@@ -49,4 +49,36 @@ controller.novo = async (req, res) => {
     }
 }
 
+// Operação RETRIEVE (all), função listar()
+// async e await andam sempre juntos
+controller.listar = async (req, res) => {
+    try {
+        // await faz o servidor MongoDB esperar até a busca completa da informação 
+        let dados = await Curso.find() // Traz todos os cursos cadastrados
+        res.send(dados) // Vai com status HTTP 200: OK
+    }
+    catch(erro) {
+        console.log(erro)
+        res.status(500).send(erro)
+    }
+}
+
+// Operação RETRIEVE (one), função obterUm()
+controller.obterUm = async (req, res) => {
+    try{
+        // Capturando o parâmetro id da URL
+        const id = req.params.id
+        let obj = await Curso.findById(id)
+
+        // O objeto existe e foi encontrado
+        if(obj) res.send(obj) // HTTP 200
+        // Não encontrado
+        else res.status(404).end() //HTTP 404: Not found
+    }
+    catch(erro) {
+        console.log(erro)
+        res.status(500).send(erro)
+    }
+}
+
 module.exports = controller
