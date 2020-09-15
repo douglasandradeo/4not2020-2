@@ -36,4 +36,4 @@ const esquema = mongoose.Schema({
        modelo serão armazenados no MongoDB
 */
 
-module.exports = mongoose.model('Çurso', esquema, 'cursos')
+module.exports = mongoose.model('Curso', esquema, 'cursos')
