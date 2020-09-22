@@ -1,4 +1,4 @@
-const controller = require('../controllers/turma')
+const controller = require('../controllers/evento')
 const express = require('express')
 
 const router = express.Router()

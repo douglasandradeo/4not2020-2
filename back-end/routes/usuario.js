@@ -1,4 +1,4 @@
-const controller = require('../controllers/sala_aula')
+const controller = require('../controllers/usuario')
 const express = require('express')
 
 const router = express.Router()

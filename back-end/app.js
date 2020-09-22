@@ -26,22 +26,22 @@ app.use('/users', usersRouter);
 const teste = require('./routes/teste')
 app.use('/teste', teste)
 
-const curso = require('./routes/evento')
-app.use('/evento', curso)
+const evento = require('./routes/evento')
+app.use('/evento', evento)
 
-const professor = require('./routes/indice')
-app.use('/indice', professor)
+const indice = require('./routes/indice')
+app.use('/indice', indice)
 
-const sala_aula = require('./routes/resultado')
-app.use('/resultado', sala_aula)
+const resultado = require('./routes/resultado')
+app.use('/resultado', resultado)
 
-const turma = require('./routes/setor')
-app.use('/setor', turma)
+const setor = require('./routes/setor')
+app.use('/setor', setor)
 
-const turma = require('./routes/tipo')
-app.use('/tipo', turma)
+const tipo = require('./routes/tipo')
+app.use('/tipo', tipo)
 
-const turma = require('./routes/usuario')
-app.use('/usuario', turma)
+const usuario = require('./routes/usuario')
+app.use('/usuario', usuario)
 
 module.exports = app;
