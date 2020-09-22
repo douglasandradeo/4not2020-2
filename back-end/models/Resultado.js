@@ -3,9 +3,9 @@ const mongoose = require('mongoose')
 // Type dentro do mongoose usa-se a primeira letra maiúscula
 // Normalmente só se trabalha com Number quando vai-se fazer cálculos
 const esquema = mongoose.Schema({
-    nome: { type: String, required: true },
-    capacidade: { type: Number, default: 20 },
-    recursos_didaticos: { type: String }
+    evento: { type: mongoose.ObjectId, ref: 'Evento', required: true },
+    indice: { type: mongoose.ObjectId, ref: 'Indice', required: true },
+    
 })
 
 /* 
@@ -16,4 +16,4 @@ const esquema = mongoose.Schema({
        modelo serão armazenados no MongoDB
 */
 
-module.exports = mongoose.model('SalaAula', esquema, 'Salas_aula')
+module.exports = mongoose.model('Resultado', esquema, 'resultado')

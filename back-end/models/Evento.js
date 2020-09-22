@@ -16,19 +16,8 @@ const esquema = mongoose.Schema({
             message: () => 'A data final deve ser maior ou igual à data inicial.'
         }
     },
-    // Colocando [ ] faz com que o atributo seja multivalorado, aceitando mais de um valor
-    dias_semana: [{
-        type: String,
-        required: true,
-        enum: ['dom', 'seg', 'ter', 'qua', 'qui', 'sex', 'sáb']
-    }],
-    // Valores que usam apenas a parte de hora de uma data
-    // são manipulados mais facilmente como string
-    horario_inicial: { type: String, required: true },
-    horario_final: { type: String, required: true },
-    curso: { type: mongoose.ObjectId, ref: 'Curso', required: true },
-    professor: { type: mongoose.ObjectId, ref: 'Professor', required: true },
-    sala_aula: { type: mongoose.ObjectId, ref: 'SalaAula', required: true }
+    tipo: { type: mongoose.ObjectId, ref: 'Tipo', required: true },
+    setor: { type: mongoose.ObjectId, ref: 'Setor', required: true },
 })
 
 /* 
@@ -39,4 +28,4 @@ const esquema = mongoose.Schema({
        modelo serão armazenados no MongoDB
 */
 
-module.exports = mongoose.model('Turma', esquema, 'Turmas')
+module.exports = mongoose.model('Evento', esquema, 'eventos')
