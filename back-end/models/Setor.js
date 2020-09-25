@@ -4,16 +4,10 @@ const mongoose = require('mongoose')
 // Normalmente só se trabalha com Number quando vai-se fazer cálculos
 const esquema = mongoose.Schema({
     // Colocando [ ] faz com que o atributo seja multivalorado, aceitando mais de um valor
-    setores: [{
-        type: String,
-        required: true,
-        enum: [
-            'Setor primário: Agricultura, Pecuária, Extrativismo, Caça, Pesca, Mineração',
-            'Setor secundário: Construção Civil, Indústria Aeroespacial, Aeronaves, Alimentos, Automóveis, Energética, Naval, Tecnologia',
-            'Setor terciário: Comércio Eletrônico,Informal,Ilegal,Internacional,Varejista,Serviços,Transporte',
-        ]
-    }]
+    setor: [{ type: String, required: true }],
+
 })
+
 
 /* 
  Parâmetros do método mongoose.model()

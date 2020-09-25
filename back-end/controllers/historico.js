@@ -33,7 +33,7 @@
 // async e await servem para que o sistema espere o retorno para saber qual
 // rumo tomar com relação ao retorno que será dado ao usuário.
 
-const tipo = require('../models/Tipo')
+const historico = require('../models/Historico')
 const controller = {} // Objeto vazio
 
 // Operação CREATE, função novo()
@@ -41,7 +41,7 @@ controller.novo = async (req, res) => {
     // Usa os dados que chegam dentro do body da requisição
     // e os envia ao BD para a criaçào de um novo objeto
     try {
-        await tipo.create(req.body)
+        await historico.create(req.body)
         // HTTP 201: Created
         res.status(201).end()
     }
@@ -58,12 +58,10 @@ controller.listar = async (req, res) => {
     try {
         // await faz o servidor MongoDB esperar até a busca completa da informação 
         // Traz todos os cursos cadastrados
-        let dados = await tipo.find()
+        let dados = await historico.find()
             // populate vai até a pasta models e, por ter type ObjectId ele busca todos os dados cadastrados
-            .populate('curso', 'nome') // traz apenas o nome do id indicado
-            .populate('professor') // todos os atributos
-            .populate('sala_aula', 'nome capacidade') // somente nome e capacidade (separar apenas com espaço)
-        res.send(dados) // Vai com status HTTP 200: OK
+            .populate('tipo') // todos os atributos
+        res.send(dados) // Vai com status HTTPs 200: OK
     }
     catch(erro) {
         console.log(erro)
@@ -76,7 +74,7 @@ controller.obterUm = async (req, res) => {
     try{
         // Capturando o parâmetro id da URL
         const id = req.params.id
-        let obj = await tipo.findById(id)
+        let obj = await historico.findById(id)
 
         // O objeto existe e foi encontrado
         if(obj) res.send(obj) // HTTP 200
@@ -96,7 +94,7 @@ controller.atualizar = async (req, res) => {
         const id = req.body._id
 
         // Busca e substituição do conteúdo do objeto
-        let ret = await tipo.findByIdAndUpdate(id, req.body)
+        let ret = await historico.findByIdAndUpdate(id, req.body)
         
         // Se encontrou e atualizou, retornamos HTTP 204: No content
         // Todos os retornos na casa dos 200, significa que deu certo 
@@ -120,7 +118,7 @@ controller.excluir = async (req, res) => {
         const id = req.body._id
 
         // Busca pelo id e exclusão
-        let ret = await tipo.findByIdAndDelete(id)
+        let ret = await historico.findByIdAndDelete(id)
         
         // Encontrou e excluiu, HTTP 204: No content
         if(ret) res.status(204).end()

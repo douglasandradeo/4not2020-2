@@ -32,16 +32,16 @@ app.use('/evento', evento)
 const indice = require('./routes/indice')
 app.use('/indice', indice)
 
-const resultado = require('./routes/resultado')
-app.use('/resultado', resultado)
+const subsetor = require('./routes/subsetor')
+app.use('/subsetor', subsetor)
 
 const setor = require('./routes/setor')
 app.use('/setor', setor)
 
-const tipo = require('./routes/tipo')
-app.use('/tipo', tipo)
-
 const usuario = require('./routes/usuario')
 app.use('/usuario', usuario)
+
+const historico = require('./routes/historico')
+app.use('/historico', historico)
 
 module.exports = app;

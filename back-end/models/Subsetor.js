@@ -3,11 +3,8 @@ const mongoose = require('mongoose')
 // Type dentro do mongoose usa-se a primeira letra maiúscula
 // Normalmente só se trabalha com Number quando vai-se fazer cálculos
 const esquema = mongoose.Schema({
-    tipos: [{
-        type: String,
-        required: true,
-        enum: ['nacionais', 'internacionais']
-    }]
+    abrevsetoriacao: { type: mongoose.ObjectId, ref: 'Setor', required: true },
+    subsetor: [{ type: String, required: true }],   
 })
 
 /* 
@@ -18,4 +15,4 @@ const esquema = mongoose.Schema({
        modelo serão armazenados no MongoDB
 */
 
-module.exports = mongoose.model('Tipo', esquema, 'tipos')
+module.exports = mongoose.model('Subsetor', esquema, 'subsetor')

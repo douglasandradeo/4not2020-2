@@ -16,8 +16,12 @@ const esquema = mongoose.Schema({
             message: () => 'A data final deve ser maior ou igual à data inicial.'
         }
     },
-    tipo: { type: mongoose.ObjectId, ref: 'Tipo', required: true },
     setor: { type: mongoose.ObjectId, ref: 'Setor', required: true },
+    tipo: [{
+        type: String,
+        required: true,
+        enum: ['nacional', 'internacional']
+    }]
 })
 
 /* 

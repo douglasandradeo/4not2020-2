@@ -33,7 +33,7 @@
 // async e await servem para que o sistema espere o retorno para saber qual
 // rumo tomar com relação ao retorno que será dado ao usuário.
 
-const resultado = require('../models/Resultado')
+const subsetor = require('../models/Subsetor')
 const controller = {} // Objeto vazio
 
 // Operação CREATE, função novo()
@@ -41,7 +41,7 @@ controller.novo = async (req, res) => {
     // Usa os dados que chegam dentro do body da requisição
     // e os envia ao BD para a criaçào de um novo objeto
     try {
-        await resultado.create(req.body)
+        await subsetor.create(req.body)
         // HTTP 201: Created
         res.status(201).end()
     }
@@ -58,7 +58,7 @@ controller.listar = async (req, res) => {
     try {
         // await faz o servidor MongoDB esperar até a busca completa da informação 
         // Traz todos os cursos cadastrados
-        let dados = await resultado.find()
+        let dados = await subsetor.find()
             // populate vai até a pasta models e, por ter type ObjectId ele busca todos os dados cadastrados
             .populate('Evento') // todos os atributos
             .populate('Indice') // todos os atributos
@@ -75,7 +75,7 @@ controller.obterUm = async (req, res) => {
     try{
         // Capturando o parâmetro id da URL
         const id = req.params.id
-        let obj = await resultado.findById(id)
+        let obj = await subsetor.findById(id)
 
         // O objeto existe e foi encontrado
         if(obj) res.send(obj) // HTTP 200
@@ -95,7 +95,7 @@ controller.atualizar = async (req, res) => {
         const id = req.body._id
 
         // Busca e substituição do conteúdo do objeto
-        let ret = await resultado.findByIdAndUpdate(id, req.body)
+        let ret = await subsetor.findByIdAndUpdate(id, req.body)
         
         // Se encontrou e atualizou, retornamos HTTP 204: No content
         // Todos os retornos na casa dos 200, significa que deu certo 
@@ -119,7 +119,7 @@ controller.excluir = async (req, res) => {
         const id = req.body._id
 
         // Busca pelo id e exclusão
-        let ret = await resultado.findByIdAndDelete(id)
+        let ret = await subsetor.findByIdAndDelete(id)
         
         // Encontrou e excluiu, HTTP 204: No content
         if(ret) res.status(204).end()
