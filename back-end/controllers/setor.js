@@ -57,12 +57,7 @@ controller.novo = async (req, res) => {
 controller.listar = async (req, res) => {
     try {
         // await faz o servidor MongoDB esperar até a busca completa da informação 
-        // Traz todos os cursos cadastrados
-        let dados = await setor.find()
-            // populate vai até a pasta models e, por ter type ObjectId ele busca todos os dados cadastrados
-            .populate('curso', 'nome') // traz apenas o nome do id indicado
-            .populate('professor') // todos os atributos
-            .populate('sala_aula', 'nome capacidade') // somente nome e capacidade (separar apenas com espaço)
+        let dados = await setor.find() // Traz todos os cursos cadastrados
         res.send(dados) // Vai com status HTTP 200: OK
     }
     catch(erro) {

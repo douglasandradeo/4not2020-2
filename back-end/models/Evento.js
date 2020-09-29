@@ -9,7 +9,7 @@ const esquema = mongoose.Schema({
         type: Date,
         required: true,
         // validador de dados inseridos
-        validate: { 
+        validate: {
             validator: function(valor) {
                 return valor >= this.data_inicial
             },
@@ -17,6 +17,7 @@ const esquema = mongoose.Schema({
         }
     },
     setor: { type: mongoose.ObjectId, ref: 'Setor', required: true },
+    subsetor: { type: mongoose.ObjectId, ref: 'Subsetor', required: true },
     tipo: [{
         type: String,
         required: true,

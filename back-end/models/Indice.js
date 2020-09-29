@@ -4,15 +4,8 @@ const mongoose = require('mongoose')
 // Normalmente só se trabalha com Number quando vai-se fazer cálculos
 const esquema = mongoose.Schema({
     nome: { type: String, required: true },
-    abreviacao: { type: String, required: true },
-    tipo: [{
-        type: String,
-        required: true,
-        enum: ['nacional', 'internacional']
-    }],
     primeiro_registro: { type: Date, required: true }, // desde qual data começou a ser registrado de forma online este histórico
     periodocidade: { type: String, required: true, enum: ['diária', 'mensal', "trimestral", "anual"] },
-    resumo: { type: String, required: true } // breve relato do que se trata o indicador
 })
 
 /* 

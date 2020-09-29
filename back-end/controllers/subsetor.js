@@ -60,8 +60,7 @@ controller.listar = async (req, res) => {
         // Traz todos os cursos cadastrados
         let dados = await subsetor.find()
             // populate vai até a pasta models e, por ter type ObjectId ele busca todos os dados cadastrados
-            .populate('Evento') // todos os atributos
-            .populate('Indice') // todos os atributos
+            .populate('setor') // todos os atributos
         res.send(dados) // Vai com status HTTPs 200: OK
     }
     catch(erro) {

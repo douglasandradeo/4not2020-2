@@ -57,11 +57,10 @@ controller.novo = async (req, res) => {
 controller.listar = async (req, res) => {
     try {
         // await faz o servidor MongoDB esperar até a busca completa da informação 
-        // Traz todos os cursos cadastrados
+        // Traz todos os indices cadastrados
         let dados = await indice.find()
-            // populate vai até a pasta models e, por ter type ObjectId ele busca todos os dados cadastrados
-            .populate('tipo') // todos os atributos
-        res.send(dados) // Vai com status HTTPs 200: OK
+
+        res.send(dados) // Vai com status HTTP 200: OK
     }
     catch(erro) {
         console.log(erro)
