@@ -4,7 +4,7 @@ const mongoose = require('mongoose')
 // Normalmente só se trabalha com Number quando vai-se fazer cálculos
 const esquema = mongoose.Schema({
     // Colocando [ ] faz com que o atributo seja multivalorado, aceitando mais de um valor
-    setor: [{ type: String, required: true }],
+    setor: { type: String, required: true },
 
 })
 

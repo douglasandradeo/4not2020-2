@@ -4,7 +4,7 @@ const mongoose = require('mongoose')
 // Normalmente só se trabalha com Number quando vai-se fazer cálculos
 const esquema = mongoose.Schema({
     setor: { type: mongoose.ObjectId, ref: 'Setor', required: true },
-    subsetor: [{ type: String, required: true }],   
+    subsetor: { type: String, required: true },   
 })
 
 /* 
