@@ -1,0 +1,24 @@
+mat-toolbar {
+
+    // Regra do filho dentro da regra do pai: possível só em SCSS
+    mat-icon {
+    color: white !important;
+    font-size: 20px;
+    width: 20px;
+    height: 20px;
+}
+    font-size: 90%;
+    justify-content: center;
+    height: 40px;
+    position: fixed;
+    bottom: 0px;
+}
+
+/* CSS puro
+mat-toolbar mat-icon {
+    color: white;
+    font-size: 20px;
+    width: 20px;
+    height: 20px;
+}
+*/
