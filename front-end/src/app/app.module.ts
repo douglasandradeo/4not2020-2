@@ -24,6 +24,7 @@ import { CursoListComponent } from './curso/curso-list/curso-list.component'
     MainMenuComponent,
     CursoListComponent
   ],
+
   imports: [
     BrowserModule,
     AppRoutingModule,
@@ -31,7 +32,9 @@ import { CursoListComponent } from './curso/curso-list/curso-list.component'
     MaterialModule,
     HttpClientModule
   ],
+
   providers: [],
+  
   bootstrap: [AppComponent]
 })
 export class AppModule { }
