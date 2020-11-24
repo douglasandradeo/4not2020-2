@@ -1,11 +1,7 @@
 import { NgModule } from '@angular/core';
 import { Routes, RouterModule } from '@angular/router';
-import { CursoListComponent } from './curso/curso-list/curso-list.component';
 
-const routes: Routes = [
-    // Nomes de rota no ANGULAR (que é chamado de "path") não começam com uma barra
-    { path: 'curso', component: CursoListComponent }
-];
+const routes: Routes = [];
 
 @NgModule({
   imports: [RouterModule.forRoot(routes)],

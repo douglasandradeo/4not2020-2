@@ -4,27 +4,23 @@ import { NgModule } from '@angular/core';
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
-import { MaterialModule } from './material/material.module';
-import { MainToolbarComponent } from './ui/main-toolbar/main-toolbar.component';
-import { MainFooterComponent } from './ui/main-footer/main-footer.component';
-import { MainMenuComponent } from './ui/main-menu/main-menu.component';
-import { HttpClientModule } from '@angular/common/http';
-import { CursoListComponent } from './curso/curso-list/curso-list.component';
 
+import { MaterialModule } from './material/material.module';
+import { MainMenuComponent } from './ui/main-menu/main-menu.component';
+import { MainFooterComponent } from './ui/main-footer/main-footer.component';
+import { MainToolbarComponent } from './ui/main-toolbar/main-toolbar.component';
 @NgModule({
   declarations: [
     AppComponent,
-    MainToolbarComponent,
-    MainFooterComponent,
     MainMenuComponent,
-    CursoListComponent
+    MainFooterComponent,
+    MainToolbarComponent
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
     BrowserAnimationsModule,
-    MaterialModule,
-    HttpClientModule
+    MaterialModule
   ],
   providers: [],
   bootstrap: [AppComponent]
