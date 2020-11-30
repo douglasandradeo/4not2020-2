@@ -21,7 +21,7 @@ const esquema = mongoose.Schema({
     tipo: [{
         type: String,
         required: true,
-        enum: ['nacional', 'internacional']
+        enum: ['Nacional', 'Internacional']
     }]
 })
 

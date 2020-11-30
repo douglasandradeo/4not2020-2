@@ -48,9 +48,9 @@
   <!-- Editar Column -->
   <ng-container matColumnDef="editar">
     <th mat-header-cell class="cell-align-center" *matHeaderCellDef>Editar</th> 
-    <td mat-cell class="cell-align-center" *matCellDef="let turma">
+    <td mat-cell class="cell-align-center" *matCellDef="let evento">
         <a mat-raised-button color="accent" title="Editar" 
-            [routerLink]="['/turma', turma._id]">
+            [routerLink]="['/evento', evento._id]">
             <mat-icon>edit</mat-icon>
         </a>
     </td>
@@ -59,8 +59,8 @@
    <!-- Excluir Column -->
   <ng-container matColumnDef="excluir">
     <th mat-header-cell class="cell-align-center" *matHeaderCellDef>Excluir</th> 
-    <td mat-cell class="cell-align-center" *matCellDef="let turma">
-        <button mat-raised-button color="warn" title="Excluir" (click)="excluir(turma._id)">
+    <td mat-cell class="cell-align-center" *matCellDef="let evento">
+        <button mat-raised-button color="warn" title="Excluir" (click)="excluir(evento._id)">
             <mat-icon>delete_forever</mat-icon>
         </button>
     </td>
