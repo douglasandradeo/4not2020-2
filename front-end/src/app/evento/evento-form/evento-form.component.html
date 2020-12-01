@@ -28,25 +28,25 @@
 
   <mat-form-field>
 	  <mat-label>Setor</mat-label>
-		<mat-select [(ngModel)]="evento.setor" name="setor" required multiple>
-      <mat-option *ngFor="let setor of setores" [value]="setor.val">
-        {{ setor.descr }}
+		<mat-select [(ngModel)]="evento.setor" name="setor" required>
+      <mat-option *ngFor="let setor of setores" [value]="setor._id">
+        {{ setor.nome }}
       </mat-option>
     </mat-select>
 	</mat-form-field> 
 
   <mat-form-field>
 	  <mat-label>Subsetor</mat-label>
-		<mat-select [(ngModel)]="evento.subsetor" name="subsetor" required multiple>
-      <mat-option *ngFor="let subsetor of subsetores" [value]="subsetor.val">
-        {{ subsetor.descr }}
+		<mat-select [(ngModel)]="evento.subsetor" name="subsetor" required>
+      <mat-option *ngFor="let subsetor of subsetores" [value]="subsetor._id">
+        {{ subsetor.nome }}
       </mat-option>
     </mat-select>
 	</mat-form-field> 
   
   <mat-form-field>
 	  <mat-label>Tipo</mat-label>
-		<mat-select [(ngModel)]="evento.tipo" name="tipo" required multiple>
+		<mat-select [(ngModel)]="evento.tipo" name="tipo" required>
       <mat-option *ngFor="let tipo of tipos" [value]="tipo.val">
         {{ tipo.descr }}
       </mat-option>

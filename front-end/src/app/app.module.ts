@@ -24,6 +24,10 @@ import { HttpClientModule } from '@angular/common/http';
 import { FormsModule } from '@angular/forms';
 import { EventoListComponent } from './evento/evento-list/evento-list.component';
 import { EventoFormComponent } from './evento/evento-form/evento-form.component';
+import { SetorListComponent } from './setor/setor-list/setor-list.component';
+import { SetorFormComponent } from './setor/setor-form/setor-form.component';
+import { SubsetorListComponent } from './subsetor/subsetor-list/subsetor-list.component';
+import { SubsetorFormComponent } from './subsetor/subsetor-form/subsetor-form.component';
 
 
 @NgModule({
@@ -33,7 +37,11 @@ import { EventoFormComponent } from './evento/evento-form/evento-form.component'
     MainFooterComponent,
     MainMenuComponent,
     EventoListComponent,
-    EventoFormComponent
+    EventoFormComponent,
+    SetorListComponent,
+    SetorFormComponent,
+    SubsetorListComponent,
+    SubsetorFormComponent
 
   ],
   imports: [
@@ -49,9 +57,9 @@ import { EventoFormComponent } from './evento/evento-form/evento-form.component'
   ],
   providers: [
     /**** Datas em português no MatDatepicker  ****/
-    //{ provide: MAT_DATE_LOCALE, useValue: 'pt-BR' }//,
-    //{ provide: MAT_DATE_FORMATS, useValue: MAT_MOMENT_DATE_FORMATS},
-    //{ provide: MAT_MOMENT_DATE_ADAPTER_OPTIONS, useValue: {useUtc: true}}
+    { provide: MAT_DATE_LOCALE, useValue: 'pt-BR' },
+    { provide: MAT_DATE_FORMATS, useValue: MAT_MOMENT_DATE_FORMATS},
+    { provide: MAT_MOMENT_DATE_ADAPTER_OPTIONS, useValue: {useUtc: true}}
     /**********************************************/
   ],
   bootstrap: [AppComponent]
