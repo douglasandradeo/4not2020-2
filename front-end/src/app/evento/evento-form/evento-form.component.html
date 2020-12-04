@@ -28,17 +28,17 @@
 
   <mat-form-field>
 	  <mat-label>Setor</mat-label>
-		<mat-select [(ngModel)]="evento.setor" name="setor" required>
+		<mat-select [(ngModel)]="evento.setor" name="setor" required (ngModelChange)="filtrarsubset()">
       <mat-option *ngFor="let setor of setores" [value]="setor._id">
         {{ setor.nome }}
-      </mat-option>
+      </mat-option >
     </mat-select>
 	</mat-form-field> 
 
   <mat-form-field>
 	  <mat-label>Subsetor</mat-label>
 		<mat-select [(ngModel)]="evento.subsetor" name="subsetor" required>
-      <mat-option *ngFor="let subsetor of subsetores" [value]="subsetor._id">
+      <mat-option *ngFor="let subsetor of subsetores1" [value]="subsetor._id">
         {{ subsetor.nome }}
       </mat-option>
     </mat-select>

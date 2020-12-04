@@ -24,6 +24,7 @@ export class EventoFormComponent implements OnInit {
   // Variáveis para armazenar as listagens de objetos relacionados
   setores : any = []   // Vetor vazio, nome no PLURAL
   subsetores : any = []
+  subsetores1 : any = []
 
   // Tipos de evento
   tipos : any = [
@@ -112,6 +113,15 @@ export class EventoFormComponent implements OnInit {
 
     if(result) this.location.back()
 
+  }
+  
+  public filtrarsubset() {
+    this.subsetores1 = []
+    for(let subsetor of this.subsetores) {
+        if(subsetor.setor._id == this.evento.setor) {
+            this.subsetores1.push(subsetor)
+        }
+    }
   }
 
 }
