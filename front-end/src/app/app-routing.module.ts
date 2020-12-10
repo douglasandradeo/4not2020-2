@@ -6,6 +6,8 @@ import { SetorListComponent } from './setor/setor-list/setor-list.component';
 import { SetorFormComponent } from './setor/setor-form/setor-form.component';
 import { SubsetorFormComponent } from './subsetor/subsetor-form/subsetor-form.component';
 import { SubsetorListComponent } from './subsetor/subsetor-list/subsetor-list.component';
+import { IndiceListComponent } from './indice/indice-list/indice-list.component';
+import { IndiceFormComponent } from './indice/indice-form/indice-form.component';
 
 
 const routes: Routes = [
@@ -21,6 +23,10 @@ const routes: Routes = [
     { path: 'subsetor', component: SubsetorListComponent },
     { path: 'subsetor/novo', component: SubsetorFormComponent },
     { path: 'subsetor/:id', component: SubsetorFormComponent },
+
+    { path: 'indice', component: IndiceListComponent },
+    { path: 'indice/novo', component: IndiceFormComponent },
+    { path: 'indice/:id', component: IndiceFormComponent },
 
 ];
 

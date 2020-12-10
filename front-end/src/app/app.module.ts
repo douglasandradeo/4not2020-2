@@ -28,6 +28,8 @@ import { SetorListComponent } from './setor/setor-list/setor-list.component';
 import { SetorFormComponent } from './setor/setor-form/setor-form.component';
 import { SubsetorListComponent } from './subsetor/subsetor-list/subsetor-list.component';
 import { SubsetorFormComponent } from './subsetor/subsetor-form/subsetor-form.component';
+import { IndiceListComponent } from './indice/indice-list/indice-list.component';
+import { IndiceFormComponent } from './indice/indice-form/indice-form.component';
 
 
 @NgModule({
@@ -41,7 +43,9 @@ import { SubsetorFormComponent } from './subsetor/subsetor-form/subsetor-form.co
     SetorListComponent,
     SetorFormComponent,
     SubsetorListComponent,
-    SubsetorFormComponent
+    SubsetorFormComponent,
+    IndiceListComponent,
+    IndiceFormComponent
 
   ],
   imports: [

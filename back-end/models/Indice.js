@@ -5,7 +5,7 @@ const mongoose = require('mongoose')
 const esquema = mongoose.Schema({
     nome: { type: String, required: true },
     primeiro_registro: { type: Date, required: true }, // desde qual data começou a ser registrado de forma online este histórico
-    periodocidade: { type: String, required: true, enum: ['diária', 'mensal', "trimestral", "anual"] },
+    periodicidade: { type: String, required: true, enum: ['Diária', 'Mensal', "Trimestral", "Anual"] },
 })
 
 /* 

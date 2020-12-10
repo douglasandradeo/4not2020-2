@@ -1,0 +1,39 @@
+<h1>{{ title }}</h1>
+
+<form class="std-form" #f="ngForm" (ngSubmit)="salvar(f)">
+
+	<mat-form-field>
+		<mat-label>Nome do Indice</mat-label>
+		<input matInput placeholder="Informe o nome do indice" [(ngModel)]="indice.nome" name="nome" required>
+  </mat-form-field>
+
+  <mat-form-field>
+    <mat-label>Primeiro Registro</mat-label>
+    <input matInput [matDatepicker]="primeiro_registro" name="primeiro_registro" 
+      [(ngModel)]="indice.primeiro_registro" placeholder="Informe a data do primeiro registro"
+      required>
+    <mat-datepicker-toggle matSuffix [for]="primeiro_registro"></mat-datepicker-toggle>
+    <mat-datepicker #primeiro_registro></mat-datepicker>
+  </mat-form-field>
+
+  <mat-form-field>
+    <mat-label>Periodicidade</mat-label>
+    <mat-select [(ngModel)]="indice.periodicidade" name="periodicidade" required multiple>
+      <mat-option *ngFor="let periodo of periodicidade" [value]="periodicidade.val">
+        {{ periodicidade.descr }}
+      </mat-option>
+    </mat-select>
+  </mat-form-field>
+
+  <mat-toolbar class="form-buttons">
+    <mat-toolbar-row>
+      <button mat-raised-button type="submit" color="accent">
+        Salvar
+      </button>
+      <button mat-raised-button type="button" (click)="voltar(f)">
+        Voltar
+      </button>
+    </mat-toolbar-row>
+  </mat-toolbar>
+
+</form>
